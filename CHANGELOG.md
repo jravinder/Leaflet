@@ -22,6 +22,8 @@ Leaflet Changelog
 #### API improvements
 
  * Improved `LatLng` constructor to be more tolerant (and throw descriptive error if latitude or longitude can't be interpreted as a number). [#136](https://github.com/CloudMade/Leaflet/issues/136)
+ * Added `urlParams` third optional argument to `TileLayer` constructor for convenience: an object with properties that will be evaluated in the URL template.
+ * Added `L.Util.template` method for simple string template evaluation.
  * Improved `map` `locate` method, added ability to watch location continuously and more options. [#212](https://github.com/CloudMade/Leaflet/issues/212)
  * Added ability to add a tile layer below all others (`map.addLayer(layer, true)`) (useful for switching base tile layers).
  * Added `hasLayer` method to `Map`.
@@ -41,6 +43,7 @@ Leaflet Changelog
 
 #### General bugfixes
 
+ * Fixed a bug where `Circle` was rendered with incorrect radius (didn't take projection exagerration into account). [#331](https://github.com/CloudMade/Leaflet/issues/331)
  * Fixed a bug where map panning would stuck forever after releasing the mouse over an iframe or a flash object (thanks to [@sten82](https://github.com/sten82)). [#297](https://github.com/CloudMade/Leaflet/pull/297) [#64](https://github.com/CloudMade/Leaflet/issues/64)
  * Fixed a bug where mouse zoom worked incorrectly if map is inside scrolled container (partially by [@chrillo](https://github.com/chrillo)). [#206](https://github.com/CloudMade/Leaflet/issues/206)
  * Fixed a bug where it was possible to add the same listener twice. [#281](https://github.com/CloudMade/Leaflet/issues/281)
